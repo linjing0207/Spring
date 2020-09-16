@@ -7,14 +7,10 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--注解的配置！！-->
+    <!--指定要扫描的包，这个包下的注解就会生效-->
+    <context:component-scan base-package="com.linjing.pojo"/>
     <context:annotation-config/>
 
-    <bean id="dog1" class="com.linjing.pojo.Dog"/>
-    <bean id="dog2" class="com.linjing.pojo.Dog"/>
-    <bean id="cat" class="com.linjing.pojo.Cat"/>
-    <bean id="cat2" class="com.linjing.pojo.Cat"/>
-    <bean id="person" class="com.linjing.pojo.Person"/>
-
+<!--    <bean id="user" class="com.linjing.pojo.User"/>-->
 
 </beans>
