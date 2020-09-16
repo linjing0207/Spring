@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.linjing.pojo.Address">
+        <property name="address" value="杭州"/>
+    </bean>
+
+    <bean id="student" class="com.linjing.pojo.Student">
+        <!--常用：普通值注入-->
+        <property name="name" value="小猪佩奇"/>
+        <!--常用：bean（引用）注入-->
+        <property name="address" ref="address"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+                <value>西游记</value>
+            </array>
+        </property>
+        <!--list注入-->
+        <property name="hobbies">
+            <list>
+                <value>听歌</value>
+                <value>打游戏</value>
+                <value>看剧</value>
+            </list>
+        </property>
+        <!--map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="123"/>
+                <entry key="银行卡" value="134234"/>
+            </map>
+        </property>
+        <!--set注入-->
+        <property name="games">
+            <set>
+                <value>lol</value>
+                <value>动物森友会</value>
+            </set>
+        </property>
+        <!--null注入，与空值注入不同-->
+        <property name="work">
+            <null/>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="driver">31301260</prop>
+                <prop key="url">小猪佩奇</prop>
+                <prop key="username">root</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

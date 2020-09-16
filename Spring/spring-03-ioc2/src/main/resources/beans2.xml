@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.linjing.pojo.User" name="u1 u2,u3;u4">
+        <constructor-arg name="name" value="小猪佩奇"/>
+    </bean>
+    <!--
+    id: bean 的唯一标识，相当于对象名
+    class: bean对象所对应的全限定名（包名+类名）
+    name：也是别名
+    -->
+    <bean id="student" class="com.linjing.pojo.Student"/>
+
+
+    <!--如果添加了别名，也用可以通过这个别名获取到这个对象-->
+    <alias name="user" alias="fwefwe"/>
+</beans>

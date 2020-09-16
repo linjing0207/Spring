@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--给实现类配置bean-->
+    <bean id="UserDaoImpl" class="com.linjing.dao.UserDaoImpl"></bean>
+    <bean id="UserDaoMySQLImpl" class="com.linjing.dao.UserDaoMySQLImpl"></bean>
+    <bean id="UserDaoOracleImpl" class="com.linjing.dao.UserDaoOracleImpl"></bean>
+    <bean id="UserDaoSqlServerImpl" class="com.linjing.dao.UserDaoSqlServerImpl"></bean>
+
+
+    <bean id="UserServiceImpl" class="com.linjing.service.UserServiceImpl">
+        <!--
+        ref: 引用spring容器中创建好的对象
+        value：基本数据类型
+        -->
+        <!--需要将属性set好-->
+        <property name="userDao" ref="UserDaoSqlServerImpl"></property>
+    </bean>
+
+
+</beans>
