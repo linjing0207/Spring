@@ -5,26 +5,31 @@
 <!--核心配置文件-->
 <configuration>
 
+    <!--别名-->
     <typeAliases>
         <package name="com.linjing.pojo"/>
     </typeAliases>
 
-    <!--可以配置多套环境-->
-    <environments default="development">
-        <environment id="development">
-            <!--事务管理-->
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url"
-                          value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;verifyServerCertificate=false&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
-                <property name="username" value="root"/>
-                <property name="password" value="123456789"/>
-            </dataSource>
-        </environment>
-    </environments>
+    <!--设置-->
+    <!--....-->
 
-    <mappers>
-        <mapper class="com.linjing.mapper.UserMapper"/>
-    </mappers>
+    <!--由spring来管理数据源了，这些不需要了-->
+    <!--<environments default="development">-->
+    <!--    <environment id="development">-->
+    <!--        &lt;!&ndash;事务管理&ndash;&gt;-->
+    <!--        <transactionManager type="JDBC"/>-->
+    <!--        <dataSource type="POOLED">-->
+    <!--            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+    <!--            <property name="url"-->
+    <!--                      value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;verifyServerCertificate=false&amp;useUnicode=true&amp;characterEncoding=utf-8"/>-->
+    <!--            <property name="username" value="root"/>-->
+    <!--            <property name="password" value="123456789"/>-->
+    <!--        </dataSource>-->
+    <!--    </environment>-->
+    <!--</environments>-->
+
+    <!--在spring里配置好了，这些不需要了-->
+    <!--<mappers>-->
+    <!--    <mapper class="com.linjing.mapper.UserMapper"/>-->
+    <!--</mappers>-->
 </configuration>
